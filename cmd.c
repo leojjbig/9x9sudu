@@ -5,9 +5,9 @@ void gameloop() {
     int right_answer = set_answer();
 
     //第二步驟
-    printf("請猜出 0 到 9 之間的正整數...\n");
-    printf("總共有三次機會猜出正確數字...\n");
-    printf("準備好了嗎...\n");
+    printf("guess 0 to 9 int number...\n");
+    printf("you have three chance\n");
+    printf("Ready ..\n");
 
     //第三步驟
     int count = 0; //記錄遊戲次數
@@ -15,25 +15,25 @@ void gameloop() {
     while (count < 3) {
         count += 1;
         int guess; //記錄使用者輸入
-        printf("請輸入：\n");
+        printf("please guess int nurber:\n");
         scanf("%d", &guess);
         int result = answer(right_answer, guess); //取得猜測結果
 
         switch (result) {
             case 0:
                 //第四步驟之情況一
-                printf("答對！\n");
-                printf("你猜了%d次...\n", count);
+                printf("Right anser!\n");
+                printf("you guess %d time...\n", count);
                 flag = 1;
                 break;
             case 1:
-                printf("大一點！\n");
+                printf("more big!\n");
                 break;
             case 2:
-                printf("小一點！\n");
+                printf("get little!\n");
                 break;
             default:
-                printf("不正確的輸入...\n");
+                printf("input not int ...\n");
         }
 
         if (flag == 1) {
@@ -43,7 +43,7 @@ void gameloop() {
 
     //第四步驟之情況二
     if (flag == 0) {
-        printf("猜了三次也沒猜對，答案是%d。\n", right_answer);
+        printf("you use 3 time,Ans is %d.\n", right_answer);
     }
 }
 
