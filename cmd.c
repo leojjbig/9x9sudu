@@ -30,7 +30,7 @@ void gameloop() {
                 printf("more big!\n");
                 break;
             case 2:
-                printf("get little!\n");
+                printf("less little!\n");
                 break;
             default:
                 printf("input not int ...\n");
